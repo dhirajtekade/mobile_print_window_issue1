@@ -5,28 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Print Page</title>
   <style>
-    body {
-      font-family: sans-serif;
-      margin: 40px;
-    }
-    .no-print {
-      display: none;
-    }
+    body { font-family: sans-serif; margin: 40px; }
   </style>
 </head>
 <body>
-  <h2>This is the content to print</h2>
+  <h2>Printable Content</h2>
   <p>Date: <span id="date"></span></p>
-  <p>Thank you for printing this demo page!</p>
+  <p>This page uses <code>window.print()</code> to open the print dialog.</p>
 
   <script>
-    // Show the current date
     document.getElementById("date").textContent = new Date().toLocaleString();
-
-    // Automatically trigger the print dialog when the page loads
-    window.onload = () => {
-      window.print();
-    };
+    window.onload = () => window.print();
   </script>
 </body>
 </html>
